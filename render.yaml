@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: aegis-ops-healer
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "bash start.sh"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: API_URL
+        value: "http://localhost:8000"
+      - key: GROQ_API_KEY
+        sync: false
